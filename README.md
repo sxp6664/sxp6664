@@ -28,7 +28,7 @@ MS Computer Science @ UT Arlington · Full-Stack Engineer · Open to Summer 2026
 
 ### 💼 Experience
 
-- **Software Engineering Intern** — Paycom *(Jun–Jul 2025)*
+- **Software Engineering Program** — Paycom *(Jun–Jul 2025)*
 - **Software Engineering Fellow** — Headstarter AI *(Jul–Sep 2024)*
 
 ---
