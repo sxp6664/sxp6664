@@ -17,7 +17,7 @@ I build full-stack and applied-ML web services — and ship them. Recently deplo
 | Project | What it does | Stack |
 |---------|--------------|-------|
 | **Zoti — AI Self-Check-In** | Full-stack hotel self-check-in: reservation lookup, AWS Textract ID-scan OCR, room selection, digital key. **Deployed on AWS EC2.** | React · FastAPI · PostgreSQL · Redis · Docker · AWS |
-| **UPIShield** *(in progress)* | Event-driven real-time payment fraud detection pipeline with Kafka, Redis caching, and fault-tolerant design. | Python · FastAPI · Kafka · Redis · Docker · AWS |
+| **UPIShield** | Event-driven real-time payment fraud detection pipeline with Kafka, Redis caching, and fault-tolerant design. | Python · FastAPI · Kafka · Redis · Docker · AWS |
 | **ForgeAI** *(in progress)* | Multi-agent developer platform: repo indexing, semantic code search, automated PR reviews. | Python · FastAPI · React · LangGraph · AWS |
 
 ---
