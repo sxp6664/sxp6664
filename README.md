@@ -55,9 +55,9 @@ role: SWE · Backend · Applied ML
 school: UT Arlington (M.S. CS)
 location: Arlington, TX
 focus:
+  - LLM agents & evals
   - Real-time ML serving
   - Distributed systems
-  - LLM inference & evals
   - Observability
 philosophy: Measure, then optimize
 open_to: Summer 2027 internships
@@ -86,7 +86,10 @@ open_to: Summer 2027 internships
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white)
 ![pandas](https://img.shields.io/badge/pandas-150458?style=flat-square&logo=pandas&logoColor=white)
 ![NumPy](https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white)
+![LangGraph](https://img.shields.io/badge/LangGraph-1C3C3C?style=flat-square&logo=langchain&logoColor=white)
 ![Ollama](https://img.shields.io/badge/Ollama-000000?style=flat-square&logo=ollama&logoColor=white)
+![Groq](https://img.shields.io/badge/Groq-F55036?style=flat-square&logo=groq&logoColor=white)
+![Tree-sitter](https://img.shields.io/badge/Tree--sitter-333333?style=flat-square&logo=treesitter&logoColor=white)
 ![Hugging Face](https://img.shields.io/badge/Hugging%20Face-FFD21E?style=flat-square&logo=huggingface&logoColor=black)
 
 **Backend & Streaming**
@@ -123,6 +126,33 @@ open_to: Summer 2027 internships
 ![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=flat-square&logo=firebase&logoColor=black)
 
 ## 🚀 Featured Builds
+
+### 🤖 [Agentic Code Reviewer](https://github.com/sxp6664/agentic-code-reviewer) — LLM Agent with Verified Self-Correction
+
+A **LangGraph** agent that reviews buggy Python: Tree-sitter extracts AST structure,
+an LLM proposes a patch and test suite, and the patch is **verified by execution** in
+an isolated Docker sandbox (256MB, 1 CPU, no network) before anything is called fixed.
+On failure, sandbox `stderr` feeds back into the next prompt — a real self-correction
+loop, bounded by an iteration budget.
+
+**I built the eval harness before trusting the numbers.** It scores the agent against
+**hidden assertions it never sees**, separating *resolution rate* (its own tests pass)
+from *correctness rate* (the patch actually works):
+
+| Metric | Result |
+| --- | --- |
+| Correctness (hidden assertions) | **87.5%** — 7/8 |
+| Correct within 2 iterations | 75.0% — 6/8 |
+| AST parse / sandbox latency | ~1.7 ms / ~130–220 ms |
+
+Those two rates first came out **87.5% vs 75.0%** — because a failed JSON extraction
+fell back to *unpatched code* with `assert True`, silently self-passing. The harness
+caught it; fixing the fallback closed the gap. That bug would have been invisible
+without hidden-assertion scoring.
+
+`Python` `LangGraph` `Groq` `Tree-sitter` `Docker` `Prometheus`
+
+---
 
 ### 🛡️ [UPIShield](https://github.com/sxp6664/upishield) — Real-Time Fraud Detection with an LLM Explanation Layer
 
